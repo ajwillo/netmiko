@@ -288,12 +288,12 @@ class BaseConnection(object):
 
         In general, it should include:
         self.set_base_prompt()
-        self.disable_paging()
-        self.set_terminal_width()
+        self.disable_paging()   # if applicable
         """
+        time.sleep(2)     # add this line
+        self.clear_buffer()    # add this line
         self.set_base_prompt()
         self.disable_paging()
-        self.set_terminal_width()
 
     def _use_ssh_config(self, connect_dict):
         """
